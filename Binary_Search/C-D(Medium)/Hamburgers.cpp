@@ -56,17 +56,17 @@ int main(){
     long long low = 0;
     long long high = 1e13;
   
-    while(low<high-1){
+    while(low<=high){
         
         long long mid = (low+high)/2;
         
         if(max((mid*B-numberOfB)*costOfB,0ll) + max((mid*S-numberOfS)*costOfS,0ll) + max((mid*C-numberOfC)*costOfC,0ll)<=rubles){
 			
-            low = mid;
+            low = mid+1;
         }
-        else high = mid;
+        else high = mid-1;
     }
-    cout<<low;
+    cout<<low-1;
     return 0;
 }
 
